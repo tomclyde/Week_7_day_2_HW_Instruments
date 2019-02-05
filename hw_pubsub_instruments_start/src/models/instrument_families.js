@@ -11,8 +11,15 @@ InstrumentFamilies.prototype.bindEvents = function(){
 
   PubSub.subscribe('SelectView:change', (evt) => {
     const selectedIndex = evt.detail;
-    this.publishAnimalDetail(selectedIndex);
+    this.publishInstrumentsDetail(selectedIndex);
   });
 };
+
+
+InstrumentFamilies.prototype.publishInstrumentsDetail = function(InstrumentIndex){
+  const selectedInstrument = this.data[InstrumentIndex];
+  PubSub.publish('Instruments:selected-instruments-ready', selectedInstrument)
+};
+
 
 module.exports = InstrumentFamilies;

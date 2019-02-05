@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const instrumentDropdown = new SelectView(selectElement);
   instrumentDropdown.bindEvents();
 
+  const infoDiv = document.querySelector('div#instruments-info');
+  const InstrumentsInfoDisplay = new InstrumentFamiliesInfoView(infoDiv);
+  InstrumentsInfoDisplay.bindEvents();
+
   console.log(InstrumentsData);
   const InstrumentsDataSource = new InstrumentFamilies(InstrumentsData);
   InstrumentsDataSource.bindEvents();
