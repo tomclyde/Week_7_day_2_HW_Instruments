@@ -13,10 +13,10 @@ InstrumentFamiliesInfoView.prototype.bindEvents = function(){
 
 InstrumentFamiliesInfoView.prototype.render = function(instruments){
   const infoParagraph = document.createElement('p');
-  infoParagraph.textContent = `Instrument Type Name: ${instruments.name}
-                               Description: ${instruments.description}
-                               Example Instruments: ${instruments.instruments}`;
+  infoParagraph.textContent = `Instrument Type Name: ${instruments.name}\n\nDescription: ${instruments.description}\n\nExample Instruments: ${instruments.instruments}`;
   this.container.innerHTML = '';
+  this.container.setAttribute('style', 'white-space: pre-wrap;');
+  //nfoParagraph.classList.add("description")
   this.container.appendChild(infoParagraph);
 };
 
